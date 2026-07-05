@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - HW1</title>
+    <title>Trang Chủ - HW2</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <a href="#main-content">Skip to Main Content</a>
 
     <header>
-        <h1>Chào mừng đến với Web Design</h1>
+        <h1>Trang Chủ - Bố cục Grid</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="page2.html">Giới Thiệu</a></li>
-            <li><a href="page3.html">Liên Hệ</a></li>
-        </ul>
-    </nav>
+    <div style="text-align: center; background-color: #e2e2e2;">
+        <nav>
+            <img src="https://via.placeholder.com/100/ffffff/000000?text=Logo" alt="Logo trang web">
+            <ul>
+                <li><a href="index.html">Trang Chủ (Grid)</a></li>
+                <li><a href="page2.html">Công Viên (Flex)</a></li>
+                <li><a href="page3.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <main>
-        <p>Đây là trang chủ. Khóa học này giới thiệu cho chúng ta sức mạnh của CSS3 trong việc định dạng trang web.</p>
-        <p>Bằng cách sử dụng một tệp CSS duy nhất, chúng ta có thể thay đổi giao diện của toàn bộ các trang HTML cùng
-            một lúc một cách rất nhanh chóng.</p>
+    <main id="main-content">
+        <p>Đây là khu vực hiển thị bố cục sử dụng class <b>.grid</b>. Hình ảnh ở dưới đã được cấu hình width: 100% để lấp đầy các cột 40%.</p>
+        
+        <div class="grid">
+            <img src="https://via.placeholder.com/600x400/ff7f50/333333?text=Grid+Anh+1" alt="Ảnh Grid 1">
+            <img src="https://via.placeholder.com/600x400/6495ed/333333?text=Grid+Anh+2" alt="Ảnh Grid 2">
+            <img src="https://via.placeholder.com/600x400/3cb371/333333?text=Grid+Anh+3" alt="Ảnh Grid 3">
+            <img src="https://via.placeholder.com/600x400/ffd700/333333?text=Grid+Anh+4" alt="Ảnh Grid 4">
+        </div>
     </main>
 
     <footer>
-        <p>Bản quyền © 2026. Bài tập CSS Tuần 1.</p>
+        <p>Bản quyền © 2026. Bài tập HW2.</p>
     </footer>
-
 </body>
-
 </html>
