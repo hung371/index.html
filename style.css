@@ -1,133 +1,53 @@
-/* ============================================== */
-/* 1. THIẾT LẬP CHUNG TỪ BÀI 1 & TRỢ NĂNG (HW2)   */
-/* ============================================== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
-    padding: 0;
-}
-
-/* Định dạng cho nút Skip to Main Content (HW2) */
-a[href="#main-content"] {
-    display: block;
-    padding: 10px;
-    background-color: #ffcc00; /* Màu vàng nổi bật */
-    color: #000000;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-}
-
-header {
-    background-color: #004080;
     padding: 20px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    font-style: italic;
+    color: #333;
+}
+
+#image {
+    line-height: 300px;
+    width: 500px;
+    height: 300px;
+    border: 5px solid #333;
+    margin: 20px auto;
+    background-color: #8e8e8e;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
-    margin: 0;
-}
-
-main {
-    background-color: #f4f4f4;
-    font-size: 18px;
-    padding: 30px;
-    min-height: 400px;
-}
-
-footer {
-    background-color: #111111;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-}
-
-p {
-    line-height: 1.6;
-    color: #333333;
-}
-
-/* ============================================== */
-/* 2. THANH ĐIỀU HƯỚNG (NAV) - YÊU CẦU HW2        */
-/* ============================================== */
-
-/* Comment out the existing styling for the li element */
-/*
-li {
-    display: inline-block;
-    width: 30%;
-}
-*/
-
-/* Đổi nav thành inline-block và rộng 80% */
-nav {
-    display: inline-block;
-    width: 80%;
-    background-color: #222222;
-    padding: 15px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Vì li bị comment, ta cần đặt các mục thành hàng ngang bằng display: inline */
-nav li {
-    display: inline;
-    padding: 0 15px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
+    font-size: 120%;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Descendent selector: Chỉ ảnh nằm trong nav mới rộng 10% */
-nav img {
-    width: 10%;
-    vertical-align: middle;
-    margin-bottom: 10px;
-}
-
-/* ============================================== */
-/* 3. BỐ CỤC GRID & FLEXBOX - YÊU CẦU HW2         */
-/* ============================================== */
-
-/* Style the grid class: 2 cột, mỗi cột 40% */
-.grid {
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: space-evenly; /* Căn giữa màn hình */
-    align-items: center;
-    row-gap: 30px; /* Khoảng cách giữa các hàng */
-    margin-top: 20px;
-}
-
-/* Descendent selector: Ảnh trong grid chiếm 100% cột chứa nó */
-.grid img {
-    width: 100%;
-    border-radius: 8px; /* Bo góc cho đẹp */
-}
-
-/* Style the flex class */
-.flex {
+.gallery {
     display: flex;
+    justify-content: center;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: space-around; /* Căn đều khoảng trống */
-    gap: 20px; /* Khoảng cách giữa các ảnh flex */
     margin-top: 20px;
 }
 
-/* Đảm bảo ảnh trong flex có kích thước vừa phải để tự động rớt dòng */
-.flex img {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 8px;
+.preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Hiệu ứng đường viền khi di chuột hoặc dùng phím TAB (hỗ trợ Accessibility - Wave/aXe) */
+.preview:hover, 
+.preview:focus {
+    border-color: #0056b3;
+    transform: scale(1.05);
+    outline: 3px solid #ffbf47;
 }
