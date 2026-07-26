@@ -1,42 +1,74 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - HW2</title>
+    <title>Interactive Photo Gallery</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <a href="#main-content">Skip to Main Content</a>
+<!-- Yêu cầu 8: Thêm sự kiện onload gọi hàm addTabFocus -->
+<body onload="addTabFocus()">
 
-    <header>
-        <h1>Trang Chủ - Bố cục Grid</h1>
-    </header>
+    <main>
+        <h1>Interactive Photo Gallery</h1>
 
-    <div style="text-align: center; background-color: #e2e2e2;">
-        <nav>
-            <img src="https://via.placeholder.com/100/ffffff/000000?text=Logo" alt="Logo trang web">
-            <ul>
-                <li><a href="index.html">Trang Chủ (Grid)</a></li>
-                <li><a href="page2.html">Công Viên (Flex)</a></li>
-                <li><a href="page3.html">Liên Hệ</a></li>
-            </ul>
-        </nav>
-    </div>
+        <!-- Khung hiển thị ảnh lớn & mô tả -->
+        <div id="image">
+            Hover over or tab to an image below to display here.
+        </div>
 
-    <main id="main-content">
-        <p>Đây là khu vực hiển thị bố cục sử dụng class <b>.grid</b>. Hình ảnh ở dưới đã được cấu hình width: 100% để lấp đầy các cột 40%.</p>
-        
-        <div class="grid">
-            <img src="https://via.placeholder.com/600x400/ff7f50/333333?text=Grid+Anh+1" alt="Ảnh Grid 1">
-            <img src="https://via.placeholder.com/600x400/6495ed/333333?text=Grid+Anh+2" alt="Ảnh Grid 2">
-            <img src="https://via.placeholder.com/600x400/3cb371/333333?text=Grid+Anh+3" alt="Ảnh Grid 3">
-            <img src="https://via.placeholder.com/600x400/ffd700/333333?text=Grid+Anh+4" alt="Ảnh Grid 4">
+        <!-- Yêu cầu 2 & 6: 6 hình ảnh với thẻ alt đầy đủ, giữ onmouseover/onmouseleave và thêm onfocus/onblur -->
+        <div class="gallery">
+            <img class="preview" 
+                 alt="A beautiful path surrounded by autumn trees" 
+                 src="https://picsum.photos/id/10/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Serene mountain landscape at sunrise" 
+                 src="https://picsum.photos/id/11/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Calm blue ocean waves rolling onto the shore" 
+                 src="https://picsum.photos/id/12/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Lush green forest with sunlight beaming through leaves" 
+                 src="https://picsum.photos/id/13/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="City skyline illuminated with vibrant night lights" 
+                 src="https://picsum.photos/id/14/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
+
+            <img class="preview" 
+                 alt="Snow-capped mountain peaks beneath a clear blue sky" 
+                 src="https://picsum.photos/id/15/500/300" 
+                 onmouseover="upDate(this)" 
+                 onmouseleave="unDo()" 
+                 onfocus="upDate(this)" 
+                 onblur="unDo()">
         </div>
     </main>
 
-    <footer>
-        <p>Bản quyền © 2026. Bài tập HW2.</p>
-    </footer>
 </body>
 </html>
