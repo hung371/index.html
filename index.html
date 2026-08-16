@@ -1,74 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Photo Gallery</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Accessible Gallery</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<!-- Yêu cầu 8: Thêm sự kiện onload gọi hàm addTabFocus -->
-<body onload="addTabFocus()">
+<body>
+  <header>
+    <h1>My Personal Photo Gallery</h1>
+    <p>Welcome to my custom photo gallery project showcasing responsive layout design and accessibility features.</p>
+  </header>
 
-    <main>
-        <h1>Interactive Photo Gallery</h1>
+  <main>
+    <div class="grid">
+      <figure>
+        <img src="https://picsum.photos/id/1015/400/300" alt="A serene view of a blue mountain river at sunset">
+        <figcaption>Explore beautiful mountain landscapes with fresh air and flowing rivers.</figcaption>
+      </figure>
 
-        <!-- Khung hiển thị ảnh lớn & mô tả -->
-        <div id="image">
-            Hover over or tab to an image below to display here.
-        </div>
+      <figure>
+        <img src="https://picsum.photos/id/1025/400/300" alt="A cute dog wrapped snugly in a warm blanket">
+        <figcaption>Adoption programs bring joy and companionship into cozy homes every day.</figcaption>
+      </figure>
 
-        <!-- Yêu cầu 2 & 6: 6 hình ảnh với thẻ alt đầy đủ, giữ onmouseover/onmouseleave và thêm onfocus/onblur -->
-        <div class="gallery">
-            <img class="preview" 
-                 alt="A beautiful path surrounded by autumn trees" 
-                 src="https://picsum.photos/id/10/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
+      <figure>
+        <img src="https://picsum.photos/id/1039/400/300" alt="A waterfall plunging into a clear forest pool">
+        <figcaption>Discovering hidden forest waterfalls provides quiet moments of solitude and reflection.</figcaption>
+      </figure>
 
-            <img class="preview" 
-                 alt="Serene mountain landscape at sunrise" 
-                 src="https://picsum.photos/id/11/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
+      <figure>
+        <img src="https://picsum.photos/id/1040/400/300" alt="A winding road through a dense green forest">
+        <figcaption>Scenic road trips through ancient woodlands offer unforgettable outdoor adventures.</figcaption>
+      </figure>
 
-            <img class="preview" 
-                 alt="Calm blue ocean waves rolling onto the shore" 
-                 src="https://picsum.photos/id/12/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
+      <figure>
+        <img src="https://picsum.photos/id/1050/400/300" alt="Ocean waves crashing gently against rocky cliffs">
+        <figcaption>Coastal breezes and dramatic cliffs present majestic views along the Pacific shore.</figcaption>
+      </figure>
 
-            <img class="preview" 
-                 alt="Lush green forest with sunlight beaming through leaves" 
-                 src="https://picsum.photos/id/13/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
-
-            <img class="preview" 
-                 alt="City skyline illuminated with vibrant night lights" 
-                 src="https://picsum.photos/id/14/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
-
-            <img class="preview" 
-                 alt="Snow-capped mountain peaks beneath a clear blue sky" 
-                 src="https://picsum.photos/id/15/500/300" 
-                 onmouseover="upDate(this)" 
-                 onmouseleave="unDo()" 
-                 onfocus="upDate(this)" 
-                 onblur="unDo()">
-        </div>
-    </main>
-
+      <figure>
+        <img src="https://picsum.photos/id/1069/400/300" alt="A calm lake reflecting pine trees under a clear sky">
+        <figcaption>Camping near peaceful waters creates memories that last throughout a lifetime.</figcaption>
+      </figure>
+    </div>
+  </main>
 </body>
 </html>
