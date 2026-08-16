@@ -1,44 +1,107 @@
-/* -------------------------------------------------------------
-   MẶC ĐỊNH (Mobile View): Áp dụng cho màn hình nhỏ
-   ------------------------------------------------------------- */
-div {
-  width: 100%;
-  margin-bottom: 15px;
+/* ==========================================================================
+   Base & Mobile First View (Không dùng Media Query cho Mobile)
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #222222;
 }
 
-img {
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+/* One column grid with 10px gap between rows and columns */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  margin: 0;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px solid #dddddd; /* Explicit border set for later modification */
+  box-sizing: border-box;
+}
+
+figure img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
+figcaption {
+  margin-top: 10px;
+}
 
-/* -------------------------------------------------------------
-   BƯỚC 5: First Media Query (Tablet / Màn hình trung bình)
-   ------------------------------------------------------------- */
-@media screen and (min-width: 600px) {
-  /* Điều chỉnh bố cục div (ví dụ: chia thành 2 cột) */
-  div {
-    width: 45%;
-    display: inline-block;
-    vertical-align: top;
-    margin: 2%;
+/* ==========================================================================
+   Tablet View (min-width: 772px)
+   ========================================================================== */
+
+@media screen and (min-width: 772px) {
+  /* Two column grid */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Điều chỉnh kiểu dáng cho hình ảnh */
-  img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Set border radius to create a circular shape */
+  figure {
+    border-radius: 50%;
+    overflow: hidden; /* Keeps content inside rounded borders */
+    text-align: center;
+    padding: 30px;
+  }
+
+  /* Last figure takes up both columns */
+  figure:last-child {
+    grid-column: span 2;
   }
 }
 
+/* ==========================================================================
+   Large Screen View (min-width: 992px)
+   ========================================================================== */
 
-/* -------------------------------------------------------------
-   BƯỚC 7: Second Media Query (Desktop / Màn hình lớn)
-   ------------------------------------------------------------- */
 @media screen and (min-width: 992px) {
-  /* Điều chỉnh thêm cho các thẻ div (ví dụ: chia thành 3 hoặc 4 cột) */
-  div {
-    width: 28%;
-    margin: 1.5%;
+  /* Remove border radius from all figures */
+  figure {
+    border-radius: 0;
+  }
+
+  /* Reset last-child column span from tablet view */
+  figure:last-child {
+    grid-column: auto;
+  }
+
+  /* Every third figure takes up both columns */
+  figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* ==========================================================================
+   User Preference: Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================================
+   User Preference: Dark Color Scheme
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #1a1a1a; /* Dark background */
+    color: #fffbbf;            /* Light yellowish font color for optimal WAVE contrast */
+    border-color: #000000;      /* Black border */
   }
 }
